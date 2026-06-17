@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -147,8 +147,16 @@
       font-size: 13px;
       letter-spacing: 1px;
       transition: color .2s;
+      position: relative;
+    }
+    nav a::after {
+      content:'';position:absolute;bottom:-2px;left:0;right:0;
+      height:1px;background:var(--crimson);
+      transform:scaleX(0);transform-origin:right;
+      transition:transform .3s ease;
     }
     nav a:hover { color: var(--crimson); }
+    nav a:hover::after { transform:scaleX(1);transform-origin:left; }
 
     .btn-reserve {
       background: var(--crimson);
@@ -161,7 +169,7 @@
     }
     .btn-reserve:hover { background: var(--crimson-dark) !important; }
 
-    /* ===== HERO ===== */
+    /* ===== HERO SLIDESHOW ===== */
     .hero {
       margin-top: 70px;
       padding: 0 !important;
@@ -170,18 +178,85 @@
       min-height: 550px;
       overflow: hidden;
     }
-    body { overflow-x: hidden; }
-    .hero img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center;
-      filter: brightness(0.55);
+    html, body { overflow-x: hidden; max-width: 100%; }
+
+    /* スライド */
+    .hero-slides { position:absolute;inset:0; }
+    .hero-slide {
+      position:absolute;inset:0;
+      opacity:0;
+      transition:opacity 1.4s ease;
+      will-change:opacity;
     }
+    .hero-slide.active { opacity:1; }
+    .hero-slide img {
+      width:100%;height:100%;
+      object-fit:cover;object-position:center;
+      filter:brightness(0.50);
+      transform:scale(1.06);
+      transition:transform 7s ease;
+    }
+    .hero-slide.active img { transform:scale(1); }
+
+    /* ドットインジケーター */
+    .hero-dots {
+      position:absolute;bottom:160px;right:8%;
+      display:flex;flex-direction:column;gap:10px;z-index:10;
+    }
+    .hero-dot {
+      width:2px;height:28px;background:rgba(255,255,255,0.3);
+      cursor:pointer;transition:background .3s;position:relative;overflow:hidden;
+    }
+    .hero-dot::after {
+      content:'';position:absolute;top:0;left:0;right:0;
+      height:0;background:var(--gold);transition:none;
+    }
+    .hero-dot.active::after { animation:dotFill 5s linear forwards; }
+    @keyframes dotFill { to { height:100%; } }
+
+    /* スライド番号 */
+    .hero-counter {
+      position:absolute;bottom:168px;right:calc(8% + 24px);
+      color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:2px;
+      font-family:'Cormorant Garamond',serif;z-index:10;
+    }
+
+    /* スクロールダウン矢印 */
+    .scroll-down {
+      position:absolute;bottom:150px;left:50%;transform:translateX(-50%);
+      display:flex;flex-direction:column;align-items:center;gap:8px;
+      color:rgba(255,255,255,0.55);font-size:10px;letter-spacing:3px;z-index:10;
+      animation:scrollBounce 2.2s ease-in-out infinite;
+      text-decoration:none;
+    }
+    .scroll-down::after {
+      content:'';display:block;width:1px;height:40px;
+      background:rgba(255,255,255,0.4);
+      animation:scrollLine 2.2s ease-in-out infinite;
+    }
+    @keyframes scrollBounce {
+      0%,100%{transform:translateX(-50%) translateY(0);}
+      50%{transform:translateX(-50%) translateY(6px);}
+    }
+    @keyframes scrollLine {
+      0%{transform:scaleY(0);transform-origin:top;}
+      50%{transform:scaleY(1);transform-origin:top;}
+      51%{transform-origin:bottom;}
+      100%{transform:scaleY(0);transform-origin:bottom;}
+    }
+
+    /* ヒーローコンテンツ（テキスト） */
     .hero-content {
       position: absolute;
       top: 50%; left: 8%;
       transform: translateY(-50%);
       color: #fff;
+      z-index:10;
+    }
+    .hero-content .hero-label {
+      font-size:10px;letter-spacing:5px;color:var(--gold);display:block;
+      margin-bottom:20px;
+      opacity:0;animation:heroIn .8s .3s forwards;
     }
     .hero-content h1 {
       font-size: clamp(30px, 4vw, 52px);
@@ -189,6 +264,7 @@
       line-height: 1.7;
       letter-spacing: 5px;
       margin-bottom: 16px;
+      opacity:0;animation:heroIn .9s .6s forwards;
     }
     .hero-content p {
       font-size: 14px;
@@ -196,6 +272,7 @@
       font-weight: 300;
       color: rgba(255,255,255,0.82);
       margin-bottom: 36px;
+      opacity:0;animation:heroIn .8s .9s forwards;
     }
     .btn-hero {
       display: inline-flex;
@@ -207,10 +284,41 @@
       padding: 14px 32px;
       font-size: 13px;
       letter-spacing: 2px;
-      transition: background .2s;
+      transition: background .2s, transform .2s;
+      opacity:0;animation:heroIn .8s 1.2s forwards;
     }
-    .btn-hero:hover { background: var(--crimson-dark); }
+    .btn-hero:hover { background: var(--crimson-dark); transform:translateX(4px); }
     .btn-hero::after { content: '›'; font-size: 18px; }
+    @keyframes heroIn {
+      from{opacity:0;transform:translateY(18px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    /* HERO NEWS BAR */
+    .hero-news{position:absolute;bottom:0;left:0;right:0;background:rgba(28,22,19,0.82);backdrop-filter:blur(4px);padding:0;z-index:10;}
+    .hero-news-inner{max-width:1100px;margin:0 auto;padding:0 40px;display:flex;align-items:stretch;gap:0;}
+    .hero-news-label{display:flex;align-items:center;gap:10px;padding:16px 28px 16px 0;border-right:1px solid rgba(200,169,110,0.35);flex-shrink:0;}
+    .hero-news-label span{font-size:10px;letter-spacing:4px;color:var(--gold);}
+    .hero-news-list{flex:1;display:flex;flex-direction:column;justify-content:center;gap:0;padding:10px 28px;overflow:hidden;}
+    .hero-news-item{display:flex;align-items:baseline;gap:16px;padding:5px 0;text-decoration:none;transition:opacity .2s;}
+    .hero-news-item:hover{opacity:0.75;}
+    .hero-news-date{font-size:11px;color:var(--gold);letter-spacing:1px;flex-shrink:0;}
+    .hero-news-cat{font-size:10px;letter-spacing:1px;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.25);padding:1px 7px;flex-shrink:0;}
+    .hero-news-title{font-size:12px;color:rgba(255,255,255,0.85);letter-spacing:0.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .hero-news-more{display:flex;align-items:center;padding:16px 0 16px 20px;border-left:1px solid rgba(200,169,110,0.35);flex-shrink:0;}
+    .hero-news-more a{font-size:11px;letter-spacing:2px;color:var(--gold);text-decoration:none;white-space:nowrap;transition:opacity .2s;}
+    .hero-news-more a:hover{opacity:0.7;}
+
+    @media(max-width:768px){
+      .hero-dots,.hero-counter,.scroll-down{display:none;}
+      .hero-news-inner{padding:0 16px;}
+      .hero-news-label{padding:12px 16px 12px 0;}
+      .hero-news-list{padding:8px 14px;}
+      .hero-news-item{gap:10px;}
+      .hero-news-cat{display:none;}
+      .hero-news-title{font-size:11px;}
+      .hero-news-more{padding:12px 0 12px 14px;}
+    }
 
     /* ===== SECTION COMMON ===== */
     section { padding: 80px 0; }
@@ -293,7 +401,10 @@
       color: #fff;
     }
     .feature-item:last-child { border-right: none; }
-    .feature-icon { font-size: 22px; }
+    .feature-item { transition: background .25s; }
+    .feature-item:hover { background: rgba(255,255,255,0.12); }
+    .feature-icon { font-size: 22px; transition: transform .3s; }
+    .feature-item:hover .feature-icon { transform: scale(1.2) rotate(-5deg); }
     .feature-label {
       font-size: 12px;
       letter-spacing: 1px;
@@ -348,7 +459,8 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 30px;
     }
-    .menu-card { text-align: center; }
+    .menu-card { text-align: center; transition: transform .35s ease, box-shadow .35s ease; }
+    .menu-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(44,36,32,0.13); }
     .menu-card-img {
       width: 100%;
       aspect-ratio: 4/3;
@@ -746,14 +858,31 @@
       header nav { display:none; }
       section { padding: 50px 0; }
       .container { padding: 0 20px; }
-      .hero-content { left:5%; }
-      .hero-content h1 { font-size: clamp(24px, 6vw, 36px); letter-spacing:3px; }
+
+      /* ヒーロー横ずれ防止 */
+      .hero-content { left:5%; right:5%; max-width:none; }
+      .hero-content h1 { font-size: clamp(22px, 7vw, 32px); letter-spacing:2px; }
+      .hero-content p { letter-spacing:1px; font-size:13px; }
+      .hero-content .hero-label { letter-spacing:3px; }
+
+      /* ニュースバー横ずれ防止 */
+      .hero-news { overflow:hidden; }
+      .hero-news-title { max-width:calc(100vw - 200px); }
+
+      /* features-bar グリッド修正 */
+      .features-bar .container { display:grid; grid-template-columns: repeat(2,1fr); gap:0; }
+      .features-bar .feature-item { border-right:1px solid rgba(255,255,255,0.2); border-bottom:1px solid rgba(255,255,255,0.2); }
+
       .about .container { flex-direction: column; gap: 30px; }
       .why-grid { grid-template-columns: 1fr; }
       .cta-buttons { flex-direction: column; align-items:flex-start; }
-      .features-bar .container { grid-template-columns: repeat(2,1fr); gap:16px; }
       .footer-nav { gap: 16px; }
       .footer-inner { flex-direction: column; gap:24px; }
+
+      /* split セクション画像が横にはみ出さないよう */
+      .split-img img { max-width:100%; }
+      .split-content { max-width:100%; box-sizing:border-box; }
+      .btn-outline, .btn-hero { max-width:90%; }
     }
   </style>
 </head>
@@ -769,8 +898,8 @@
   <nav>
     <a href="concept.html">コンセプト</a>
     <a href="chef.html">こだわり</a>
-    <a href="#menu">メニュー</a>
-    <a href="#atmosphere">店内</a>
+    <a href="menu.html">メニュー</a>
+    <a href="atmosphere.html">店内</a>
     <a href="course-luce.html">コース</a>
     <a href="#access">アクセス</a>
     <a href="#reserve" class="btn-reserve">ご予約はこちら</a>
@@ -781,8 +910,8 @@
   <nav>
     <a href="concept.html" onclick="closeMobileNav()">コンセプト</a>
     <a href="chef.html" onclick="closeMobileNav()">こだわり</a>
-    <a href="#menu" onclick="closeMobileNav()">メニュー</a>
-    <a href="#atmosphere" onclick="closeMobileNav()">店内</a>
+    <a href="menu.html" onclick="closeMobileNav()">メニュー</a>
+    <a href="atmosphere.html" onclick="closeMobileNav()">店内</a>
     <a href="course-luce.html" onclick="closeMobileNav()">コース</a>
     <a href="#access" onclick="closeMobileNav()">アクセス</a>
   </nav>
@@ -791,11 +920,59 @@
 
 <!-- HERO -->
 <section class="hero">
-  <img src="images/exterior-night.png" alt="Osteria LUCE 外観">
+  <div class="hero-slides">
+    <div class="hero-slide active">
+      <img src="images/exterior-night.png" alt="Osteria LUCE 外観">
+    </div>
+    <div class="hero-slide">
+      <img src="images/interior-luxury.jpg" alt="店内の雰囲気">
+    </div>
+    <div class="hero-slide">
+      <img src="images/dishes-spread.jpg" alt="料理">
+    </div>
+    <div class="hero-slide">
+      <img src="images/interior-modern.jpg" alt="バーカウンター">
+    </div>
+  </div>
+
   <div class="hero-content">
+    <span class="hero-label">OSTERIA LUCE — 甲府</span>
     <h1>大切な人と過ごす、<br>特別なイタリアン。</h1>
     <p>心に残る一皿と、くつろぎの時間を。</p>
     <a href="#reserve" class="btn-hero">今すぐ予約する</a>
+  </div>
+
+  <div class="hero-dots" id="heroDots">
+    <div class="hero-dot active" onclick="goSlide(0)"></div>
+    <div class="hero-dot" onclick="goSlide(1)"></div>
+    <div class="hero-dot" onclick="goSlide(2)"></div>
+    <div class="hero-dot" onclick="goSlide(3)"></div>
+  </div>
+  <div class="hero-counter"><span id="slideNum">01</span> / 04</div>
+
+  <a href="#concept" class="scroll-down">SCROLL</a>
+  <div class="hero-news">
+    <div class="hero-news-inner">
+      <div class="hero-news-label"><span>NEWS</span></div>
+      <div class="hero-news-list">
+        <a href="news.html#news-1" class="hero-news-item">
+          <span class="hero-news-date">2024.12.20</span>
+          <span class="hero-news-cat">営業案内</span>
+          <span class="hero-news-title">年末年始の営業時間についてのお知らせ（12/31〜1/3）</span>
+        </a>
+        <a href="news.html#news-2" class="hero-news-item">
+          <span class="hero-news-date">2024.12.01</span>
+          <span class="hero-news-cat">新メニュー</span>
+          <span class="hero-news-title">冬季限定メニュー登場 — 白トリュフとフォアグラの特別コース</span>
+        </a>
+        <a href="news.html#news-3" class="hero-news-item">
+          <span class="hero-news-date">2024.11.15</span>
+          <span class="hero-news-cat">イベント</span>
+          <span class="hero-news-title">クリスマスディナー2024 ご予約受付中（12/24・25限定）</span>
+        </a>
+      </div>
+      <div class="hero-news-more"><a href="news.html">一覧を見る ›</a></div>
+    </div>
   </div>
 </section>
 
@@ -896,7 +1073,7 @@
       </div>
     </div>
     <div class="menu-btn-wrap fade-up">
-      <a href="#" class="btn-outline">メニュー一覧を見る</a>
+      <a href="menu.html" class="btn-outline">メニュー一覧を見る</a>
     </div>
   </div>
 </section>
@@ -1094,8 +1271,8 @@
       <nav class="footer-nav">
         <a href="#concept">コンセプト</a>
         <a href="#chef">こだわり</a>
-        <a href="#menu">メニュー</a>
-        <a href="#atmosphere">店内</a>
+        <a href="menu.html">メニュー</a>
+        <a href="atmosphere.html">店内</a>
         <a href="#course">コース</a>
         <a href="#access">アクセス</a>
         <a href="#">プライバシーポリシー</a>
@@ -1143,6 +1320,57 @@
     mobileNav.classList.remove('open');
     document.body.style.overflow = '';
   }
+
+  /* ===== ヒーロースライドショー ===== */
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  const slideNumEl = document.getElementById('slideNum');
+  let current = 0;
+  let timer;
+
+  function goSlide(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    slideNumEl.textContent = String(current + 1).padStart(2,'0');
+    clearInterval(timer);
+    timer = setInterval(() => goSlide(current + 1), 5000);
+  }
+  timer = setInterval(() => goSlide(current + 1), 5000);
+
+  /* ===== パララックス ===== */
+  window.addEventListener('scroll', () => {
+    const sy = window.scrollY;
+    document.querySelectorAll('.parallax-img').forEach(el => {
+      el.style.transform = `translateY(${sy * 0.12}px)`;
+    });
+  }, {passive:true});
+
+  /* ===== カウンターアニメーション ===== */
+  function animateCount(el) {
+    const target = parseInt(el.dataset.count);
+    const duration = 1600;
+    const start = performance.now();
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target);
+      if(progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(step);
+  }
+  const countObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting && !e.target.dataset.counted) {
+        e.target.dataset.counted = '1';
+        animateCount(e.target);
+      }
+    });
+  }, {threshold:0.5});
+  document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
 </script>
 </body>
 </html>

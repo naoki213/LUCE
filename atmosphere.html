@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>店内の雰囲気 | Osteria LUCE オステリア ルーチェ 甲府</title>
+  <meta name="description" content="山梨県甲府市の本格イタリアン Osteria LUCE の店内をご覧ください。温かみのある照明と落ち着いた空間で、特別なひとときをお過ごしください。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://naoki213.github.io/LUCE/atmosphere.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://naoki213.github.io/LUCE/atmosphere.html">
+  <meta property="og:title" content="店内の雰囲気 | Osteria LUCE 甲府イタリアン">
+  <meta property="og:description" content="甲府の本格イタリアン Osteria LUCE の店内。温かみのある照明と落ち着いた空間。">
+  <meta property="og:image" content="https://naoki213.github.io/LUCE/images/interior-modern.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="Osteria LUCE">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    :root{--crimson:#9B2335;--crimson-dark:#7a1a28;--gold:#C8A96E;--cream:#FAF6F0;--dark:#2c2420;--gray:#6b6460;--light:#f7f4f0;}
+    body{font-family:'Noto Serif JP','Hiragino Mincho ProN',Georgia,serif;font-weight:300;color:var(--dark);background:#fff;-webkit-font-smoothing:antialiased;}
+
+    /* HEADER */
+    header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid #e8e0d5;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:70px;}
+    .logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;}
+    .logo-en{font-size:9px;letter-spacing:3px;color:var(--gray);text-transform:uppercase;}
+    .logo-main{font-size:26px;font-weight:300;color:var(--crimson);letter-spacing:3px;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;}
+    .logo-ja{font-size:9px;color:var(--gray);letter-spacing:2px;}
+    nav{display:flex;gap:28px;align-items:center;}
+    nav a{text-decoration:none;color:var(--dark);font-size:13px;letter-spacing:1px;transition:color .2s;}
+    nav a:hover,nav a.active{color:var(--crimson);}
+    .btn-reserve{background:var(--crimson);color:#fff!important;padding:10px 22px;font-size:13px;border-radius:2px;transition:background .2s!important;}
+    .btn-reserve:hover{background:var(--crimson-dark)!important;}
+
+    /* PAGE HERO */
+    .page-hero{margin-top:70px;position:relative;height:360px;overflow:hidden;}
+    .page-hero img{width:100%;height:100%;object-fit:cover;filter:brightness(0.45);}
+    .page-hero-content{position:absolute;bottom:60px;left:8%;color:#fff;}
+    .page-label{font-size:11px;letter-spacing:4px;color:var(--gold);display:block;margin-bottom:10px;}
+    .page-hero-content h1{font-size:clamp(28px,4vw,48px);font-weight:300;letter-spacing:5px;line-height:1.6;}
+    .page-hero-content p{font-size:13px;color:rgba(255,255,255,0.7);letter-spacing:2px;margin-top:8px;}
+
+    /* BREADCRUMB */
+    .breadcrumb{background:var(--light);padding:14px 0;}
+    .breadcrumb .container{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--gray);}
+    .breadcrumb a{color:var(--gray);text-decoration:none;}
+    .breadcrumb a:hover{color:var(--crimson);}
+    .breadcrumb span{color:var(--crimson);}
+
+    .container{max-width:1100px;margin:0 auto;padding:0 40px;}
+
+    /* INTRO */
+    .intro{padding:70px 0 50px;text-align:center;}
+    .intro-label{font-size:11px;letter-spacing:4px;color:var(--gold);display:block;margin-bottom:16px;}
+    .intro h2{font-size:clamp(22px,3vw,34px);font-weight:300;letter-spacing:5px;margin-bottom:24px;}
+    .intro p{font-size:14px;color:var(--gray);line-height:2.4;max-width:640px;margin:0 auto;}
+
+    /* FEATURED - メイン大写真 */
+    .featured{margin-bottom:6px;}
+    .featured img{width:100%;height:560px;object-fit:cover;display:block;}
+
+    /* GALLERY GRID */
+    .gallery-section{padding:60px 0;}
+    .gallery-grid{display:grid;gap:6px;}
+    .row-3{grid-template-columns:repeat(3,1fr);}
+    .row-2{grid-template-columns:2fr 1fr;}
+    .row-2-r{grid-template-columns:1fr 2fr;}
+
+    .gallery-item{position:relative;overflow:hidden;cursor:pointer;}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
+    .gallery-item:hover img{transform:scale(1.04);}
+    .gallery-item.tall{height:420px;}
+    .gallery-item.medium{height:320px;}
+    .gallery-item.short{height:260px;}
+
+    .gallery-caption{position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(transparent,rgba(44,36,32,0.75));color:#fff;opacity:0;transition:opacity .3s;}
+    .gallery-item:hover .gallery-caption{opacity:1;}
+    .gallery-caption h3{font-size:15px;font-weight:300;letter-spacing:2px;margin-bottom:4px;}
+    .gallery-caption p{font-size:12px;color:rgba(255,255,255,0.75);letter-spacing:1px;}
+
+    /* SPACE CARDS */
+    .space-section{padding:70px 0;background:var(--cream);}
+    .space-section .section-label{font-size:11px;letter-spacing:4px;color:var(--gold);display:block;margin-bottom:12px;}
+    .space-section h2{font-size:clamp(20px,2.5vw,28px);font-weight:300;letter-spacing:4px;margin-bottom:50px;}
+    .space-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
+    .space-card{background:#fff;overflow:hidden;}
+    .space-card img{width:100%;height:260px;object-fit:cover;display:block;transition:transform .4s;}
+    .space-card:hover img{transform:scale(1.03);}
+    .space-card-body{padding:24px 28px;}
+    .space-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:36px;font-weight:300;color:var(--gold);line-height:1;font-style:italic;margin-bottom:8px;}
+    .space-card h3{font-size:16px;font-weight:400;letter-spacing:2px;margin-bottom:10px;}
+    .space-card p{font-size:13px;color:var(--gray);line-height:2.2;}
+
+    /* CTA */
+    .page-cta{background:var(--dark);text-align:center;padding:70px 0;}
+    .page-cta h2{font-size:clamp(18px,2.5vw,26px);font-weight:300;letter-spacing:4px;color:#fff;margin-bottom:12px;}
+    .page-cta p{font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:32px;letter-spacing:1px;}
+    .btn-primary{display:inline-block;padding:14px 40px;background:var(--crimson);color:#fff;text-decoration:none;font-size:13px;letter-spacing:2px;transition:background .2s;margin:0 8px;}
+    .btn-primary:hover{background:var(--crimson-dark);}
+    .btn-gold{display:inline-block;padding:14px 40px;background:transparent;color:var(--gold);border:1px solid var(--gold);text-decoration:none;font-size:13px;letter-spacing:2px;transition:all .2s;margin:0 8px;}
+    .btn-gold:hover{background:var(--gold);color:var(--dark);}
+
+    /* FOOTER */
+    footer{background:var(--dark);padding:50px 0 30px;}
+    .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:40px;margin-bottom:30px;border-bottom:1px solid rgba(255,255,255,0.1);gap:40px;}
+    .footer-logo .logo-main{color:#fff;}
+    .footer-logo .logo-en,.footer-logo .logo-ja{color:rgba(255,255,255,0.5);}
+    .footer-info{font-size:12px;color:rgba(255,255,255,0.6);line-height:2;margin-top:12px;}
+    .footer-nav{display:flex;gap:24px;flex-wrap:wrap;}
+    .footer-nav a{text-decoration:none;color:rgba(255,255,255,0.6);font-size:12px;transition:color .2s;}
+    .footer-nav a:hover{color:#fff;}
+    .footer-bottom{text-align:center;font-size:11px;color:rgba(255,255,255,0.4);}
+
+    /* HAMBURGER */
+    .menu-btn{display:none;flex-direction:column;justify-content:space-between;width:24px;height:18px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;}
+    .menu-btn span{display:block;width:100%;height:1px;background:var(--dark);transition:all .3s;}
+    .menu-btn.open span:nth-child(1){transform:translateY(8.5px) rotate(45deg);}
+    .menu-btn.open span:nth-child(2){opacity:0;}
+    .menu-btn.open span:nth-child(3){transform:translateY(-8.5px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:70px;left:0;right:0;bottom:0;background:rgba(44,36,32,0.97);z-index:99;overflow-y:auto;padding:20px 0;}
+    .mobile-nav.open{display:block;}
+    .mobile-nav nav{display:flex;flex-direction:column;}
+    .mobile-nav nav a{display:block;padding:18px 30px;font-size:15px;letter-spacing:2px;color:rgba(255,255,255,0.85);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.1);}
+    .mobile-nav .m-reserve{display:block;margin:28px 30px 0;text-align:center;padding:16px;background:var(--crimson);color:#fff;text-decoration:none;font-size:14px;letter-spacing:2px;}
+
+    /* ANIMATIONS */
+    .fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+    .fade-up.visible{opacity:1;transform:none;}
+
+    @media(max-width:768px){
+      header{padding:0 20px;}
+      .menu-btn{display:flex;}
+      header nav{display:none;}
+      .container{padding:0 20px;}
+      .page-hero{height:280px;}
+      .page-hero-content{left:5%;bottom:30px;}
+      .page-hero-content h1{font-size:24px;letter-spacing:3px;}
+      .featured img{height:280px;}
+      .gallery-item.tall{height:260px;}
+      .gallery-item.medium{height:200px;}
+      .gallery-item.short{height:180px;}
+      .row-3{grid-template-columns:1fr;}
+      .row-2,.row-2-r{grid-template-columns:1fr;}
+      .space-grid{grid-template-columns:1fr;}
+      .footer-inner{flex-direction:column;gap:24px;}
+      .footer-nav{gap:16px;}
+      .page-cta .btn-primary,.page-cta .btn-gold{display:block;margin:0 0 12px 0;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <span class="logo-en">Osteria</span>
+    <span class="logo-main">LUCE</span>
+    <span class="logo-ja">オステリア ルーチェ</span>
+  </a>
+  <nav>
+    <a href="concept.html">コンセプト</a>
+    <a href="chef.html">こだわり</a>
+    <a href="menu.html">メニュー</a>
+    <a href="atmosphere.html" class="active">店内</a>
+    <a href="course-luce.html">コース</a>
+    <a href="index.html#access">アクセス</a>
+    <a href="index.html#reserve" class="btn-reserve">ご予約はこちら</a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="メニュー"><span></span><span></span><span></span></button>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <nav>
+    <a href="concept.html" onclick="closeMobileNav()">コンセプト</a>
+    <a href="chef.html" onclick="closeMobileNav()">こだわり</a>
+    <a href="menu.html" onclick="closeMobileNav()">メニュー</a>
+    <a href="atmosphere.html" onclick="closeMobileNav()">店内</a>
+    <a href="course-luce.html" onclick="closeMobileNav()">コース</a>
+    <a href="index.html#access" onclick="closeMobileNav()">アクセス</a>
+  </nav>
+  <a href="index.html#reserve" class="m-reserve" onclick="closeMobileNav()">ご予約はこちら</a>
+</div>
+
+<div class="page-hero">
+  <img src="images/interior-modern.jpg" alt="Osteria LUCE 店内">
+  <div class="page-hero-content">
+    <span class="page-label">ATMOSPHERE</span>
+    <h1>店内の雰囲気</h1>
+    <p>光と空間が織りなす、特別なひととき</p>
+  </div>
+</div>
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="index.html">HOME</a>
+    <span>›</span>
+    <span>店内の雰囲気</span>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="container">
+    <span class="intro-label fade-up">OUR SPACE</span>
+    <h2 class="fade-up">LUCE — 光、という名の空間</h2>
+    <p class="fade-up">イタリア語で「光」を意味する店名の通り、柔らかな照明が空間を包みます。大切な方との食事、記念日、ビジネスの会食など、シーンに合わせた席をご用意しています。甲府の夜に、忘れられない時間を。</p>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<div class="featured fade-up">
+  <img src="images/interior-luxury.jpg" alt="Osteria LUCE メインダイニング">
+</div>
+
+<!-- SPACE CARDS -->
+<section class="space-section">
+  <div class="container">
+    <span class="section-label fade-up">DINING SPACE</span>
+    <h2 class="fade-up">4つの表情を持つ空間</h2>
+    <div class="space-grid">
+      <div class="space-card fade-up">
+        <img src="images/interior-warm.jpg" alt="温かみのあるメインホール">
+        <div class="space-card-body">
+          <div class="space-num">01</div>
+          <h3>温もりのメインホール</h3>
+          <p>温かみのある照明が落ち着いた雰囲気を演出するメインダイニング。グループのお食事やカジュアルなディナーに。黒板に書かれた本日のスペシャルもお楽しみください。</p>
+        </div>
+      </div>
+      <div class="space-card fade-up">
+        <img src="images/interior-luxury.jpg" alt="豪華なラグジュアリーホール">
+        <div class="space-card-body">
+          <div class="space-num">02</div>
+          <h3>ラグジュアリーホール</h3>
+          <p>赤いフローラルの天井と豊富なワインセラーが印象的な特別室。記念日・プロポーズ・接待など、大切な場面に相応しい特別な空間です。</p>
+        </div>
+      </div>
+      <div class="space-card fade-up">
+        <img src="images/interior-modern.jpg" alt="モダンなバーカウンター席">
+        <div class="space-card-body">
+          <div class="space-num">03</div>
+          <h3>モダンバー＆ダイニング</h3>
+          <p>大理石のテーブルとバーカウンターを備えたモダンな空間。おひとりでのご来店やカップルの食前酒にも。豊富なイタリアワインをバーテンダーがご提案します。</p>
+        </div>
+      </div>
+      <div class="space-card fade-up">
+        <img src="images/interior-bistro.jpg" alt="ビストロ風カジュアル席">
+        <div class="space-card-body">
+          <div class="space-num">04</div>
+          <h3>ビストロスタイル席</h3>
+          <p>木の温もりとレンガ調の壁が心地よいカジュアルな席。友人同士の気軽なお食事やランチにぴったり。黒板メニューでその日のおすすめをご確認いただけます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:50px;">
+      <span class="intro-label fade-up">GALLERY</span>
+      <h2 style="font-size:clamp(20px,2.5vw,28px);font-weight:300;letter-spacing:4px;" class="fade-up">空間ギャラリー</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;" class="fade-up">
+      <div class="gallery-item tall">
+        <img src="images/interior-bistro.jpg" alt="ビストロ席">
+        <div class="gallery-caption">
+          <h3>ビストロスタイル</h3>
+          <p>木と黒板の温かな空間</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-rows:1fr 1fr;gap:6px;">
+        <div class="gallery-item medium">
+          <img src="images/interior-warm.jpg" alt="メインホール">
+          <div class="gallery-caption">
+            <h3>メインホール</h3>
+            <p>柔らかな照明の下で</p>
+          </div>
+        </div>
+        <div class="gallery-item medium">
+          <img src="images/interior-modern.jpg" alt="モダンダイニング">
+          <div class="gallery-caption">
+            <h3>モダンダイニング</h3>
+            <p>大理石×バーカウンター</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="page-cta">
+  <div class="container">
+    <h2 class="fade-up">この空間で、特別な食事を</h2>
+    <p class="fade-up">ご予約はお電話またはオンラインフォームにて承ります</p>
+    <div class="fade-up">
+      <a href="menu.html" class="btn-gold">メニューを見る</a>
+      <a href="index.html#reserve" class="btn-primary">ご予約はこちら</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <a href="index.html" class="logo footer-logo">
+          <span class="logo-en">Osteria</span>
+          <span class="logo-main">LUCE</span>
+          <span class="logo-ja">オステリア ルーチェ</span>
+        </a>
+        <p class="footer-info">〒400-0031 山梨県甲府市丸の内1-1-1<br>営業時間：11:30〜14:30 / 17:30〜23:00<br>定休日：月曜日　TEL：055-123-4567</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="concept.html">コンセプト</a>
+        <a href="chef.html">こだわり</a>
+        <a href="menu.html">メニュー</a>
+        <a href="atmosphere.html">店内</a>
+        <a href="course-luce.html">コース</a>
+        <a href="index.html#access">アクセス</a>
+      </nav>
+    </div>
+    <p class="footer-bottom">© 2024 Osteria LUCE. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  },{threshold:0.1});
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+  });
+  function closeMobileNav() {
+    menuBtn.classList.remove('open');
+    mobileNav.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+</script>
+</body>
+</html>
