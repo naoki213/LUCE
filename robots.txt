@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://naoki213.github.io/LUCE/sitemap.xml
