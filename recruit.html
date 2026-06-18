@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>採用情報 | Osteria LUCE オステリア ルーチェ 甲府</title>
+  <meta name="description" content="山梨県甲府市の本格イタリアン Osteria LUCE の採用情報。ホールスタッフ・キッチンスタッフ募集中。一緒に最高の食体験を届けましょう。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://naoki213.github.io/LUCE/recruit.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://naoki213.github.io/LUCE/recruit.html">
+  <meta property="og:title" content="採用情報 | Osteria LUCE 甲府イタリアン">
+  <meta property="og:description" content="Osteria LUCE スタッフ募集中。ホール・キッチンスタッフ。甲府市の本格イタリアンで一緒に働きませんか。">
+  <meta property="og:image" content="https://naoki213.github.io/LUCE/images/interior-modern.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="Osteria LUCE">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    :root{--crimson:#9B2335;--crimson-dark:#7a1a28;--gold:#C8A96E;--cream:#FAF6F0;--dark:#2c2420;--gray:#6b6460;--light:#f7f4f0;}
+    html,body{overflow-x:hidden;max-width:100%;}
+    body{font-family:'Noto Serif JP','Hiragino Mincho ProN',Georgia,serif;font-weight:300;color:var(--dark);background:#fff;-webkit-font-smoothing:antialiased;}
+
+    /* HEADER */
+    header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid #e8e0d5;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:70px;}
+    .logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;}
+    .logo-en{font-size:9px;letter-spacing:3px;color:var(--gray);text-transform:uppercase;}
+    .logo-main{font-size:26px;font-weight:300;color:var(--crimson);letter-spacing:3px;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;}
+    .logo-ja{font-size:9px;color:var(--gray);letter-spacing:2px;}
+    nav{display:flex;gap:28px;align-items:center;}
+    nav a{text-decoration:none;color:var(--dark);font-size:13px;letter-spacing:1px;transition:color .2s;position:relative;}
+    nav a:hover,nav a.active{color:var(--crimson);}
+    .btn-reserve{background:var(--crimson);color:#fff!important;padding:10px 22px;font-size:13px;border-radius:2px;transition:background .2s!important;}
+    .btn-reserve:hover{background:var(--crimson-dark)!important;}
+
+    /* PAGE HERO */
+    .page-hero{margin-top:70px;position:relative;height:420px;overflow:hidden;}
+    .page-hero img{width:100%;height:100%;object-fit:cover;filter:brightness(0.38);}
+    .page-hero-content{position:absolute;bottom:70px;left:8%;color:#fff;}
+    .page-label{font-size:11px;letter-spacing:4px;color:var(--gold);display:block;margin-bottom:12px;}
+    .page-hero-content h1{font-size:clamp(28px,4vw,48px);font-weight:300;letter-spacing:5px;line-height:1.6;margin-bottom:10px;}
+    .page-hero-content p{font-size:13px;color:rgba(255,255,255,0.7);letter-spacing:2px;}
+
+    /* BREADCRUMB */
+    .breadcrumb{background:var(--light);padding:14px 0;}
+    .breadcrumb .container{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--gray);}
+    .breadcrumb a{color:var(--gray);text-decoration:none;}
+    .breadcrumb a:hover{color:var(--crimson);}
+
+    .container{max-width:1100px;margin:0 auto;padding:0 40px;}
+
+    /* MESSAGE */
+    .message-section{padding:80px 0;text-align:center;}
+    .section-label{font-size:11px;letter-spacing:4px;color:var(--gold);display:block;margin-bottom:14px;}
+    .message-section h2{font-size:clamp(20px,2.5vw,30px);font-weight:300;letter-spacing:4px;margin-bottom:32px;line-height:1.8;}
+    .message-section p{font-size:14px;color:var(--gray);line-height:2.8;max-width:680px;margin:0 auto;}
+
+    /* POSITIONS */
+    .positions-section{padding:80px 0;background:var(--cream);}
+    .positions-section h2{font-size:clamp(20px,2.5vw,28px);font-weight:300;letter-spacing:4px;margin-bottom:50px;}
+    .positions-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+    .position-card{background:#fff;overflow:hidden;border:1px solid #e8e0d5;}
+    .position-card-top{padding:32px 36px 24px;border-bottom:1px solid #e8e0d5;}
+    .position-type{font-size:10px;letter-spacing:3px;color:var(--gold);display:block;margin-bottom:10px;}
+    .position-title{font-size:20px;font-weight:400;letter-spacing:2px;margin-bottom:6px;}
+    .position-sub{font-size:12px;color:var(--gray);letter-spacing:1px;}
+    .position-card-body{padding:28px 36px;}
+    .position-table{width:100%;border-collapse:collapse;}
+    .position-table tr{border-bottom:1px solid #f0ebe5;}
+    .position-table tr:last-child{border-bottom:none;}
+    .position-table th{font-size:11px;color:var(--gray);letter-spacing:1px;font-weight:300;padding:12px 0;width:90px;vertical-align:top;text-align:left;}
+    .position-table td{font-size:13px;padding:12px 0;line-height:1.9;color:var(--dark);}
+    .badge-full{background:var(--crimson);color:#fff;font-size:9px;letter-spacing:2px;padding:2px 8px;margin-left:8px;vertical-align:middle;}
+    .badge-part{background:var(--dark);color:#fff;font-size:9px;letter-spacing:2px;padding:2px 8px;margin-left:8px;vertical-align:middle;}
+
+    /* WHY */
+    .why-section{padding:80px 0;}
+    .why-section h2{font-size:clamp(20px,2.5vw,28px);font-weight:300;letter-spacing:4px;margin-bottom:50px;}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid #e8e0d5;}
+    .why-item{padding:36px 32px;border-right:1px solid #e8e0d5;border-bottom:1px solid #e8e0d5;}
+    .why-item:nth-child(3n){border-right:none;}
+    .why-item:nth-last-child(-n+3){border-bottom:none;}
+    .why-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:42px;font-weight:300;color:var(--gold);line-height:1;font-style:italic;margin-bottom:14px;}
+    .why-item h3{font-size:15px;font-weight:400;letter-spacing:2px;margin-bottom:12px;}
+    .why-item p{font-size:13px;color:var(--gray);line-height:2.2;}
+
+    /* PHOTO GALLERY */
+    .gallery-section{padding:0;}
+    .gallery-strip{display:grid;grid-template-columns:repeat(4,1fr);height:280px;}
+    .gallery-strip-item{overflow:hidden;}
+    .gallery-strip-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+    .gallery-strip-item:hover img{transform:scale(1.06);}
+
+    /* VOICE */
+    .voice-section{padding:80px 0;background:var(--cream);}
+    .voice-section h2{font-size:clamp(20px,2.5vw,28px);font-weight:300;letter-spacing:4px;margin-bottom:50px;}
+    .voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+    .voice-card{background:#fff;padding:32px 28px;border-left:3px solid var(--gold);}
+    .voice-role{font-size:10px;letter-spacing:3px;color:var(--gold);display:block;margin-bottom:6px;}
+    .voice-name{font-size:13px;letter-spacing:1px;margin-bottom:18px;color:var(--gray);}
+    .voice-text{font-size:13px;color:var(--dark);line-height:2.4;}
+    .voice-text::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--gold);line-height:0;vertical-align:-14px;margin-right:4px;}
+
+    /* APPLICATION */
+    .apply-section{padding:80px 0;}
+    .apply-inner{max-width:720px;margin:0 auto;}
+    .apply-section h2{font-size:clamp(20px,2.5vw,28px);font-weight:300;letter-spacing:4px;margin-bottom:16px;}
+    .apply-section .lead{font-size:13px;color:var(--gray);line-height:2.2;margin-bottom:50px;}
+    .apply-form{display:grid;gap:20px;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+    .form-group{display:flex;flex-direction:column;gap:8px;}
+    .form-group label{font-size:11px;letter-spacing:2px;color:var(--gray);}
+    .form-group input,
+    .form-group select,
+    .form-group textarea{padding:13px 16px;border:1px solid #ddd8d2;font-size:13px;font-family:inherit;font-weight:300;outline:none;transition:border-color .2s;background:#fff;width:100%;}
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus{border-color:var(--crimson);}
+    .form-group textarea{resize:vertical;min-height:120px;}
+    .form-required{color:var(--crimson);margin-left:4px;}
+    .form-note{font-size:11px;color:var(--gray);line-height:1.8;margin-top:4px;}
+    .btn-submit{display:block;width:100%;padding:16px;background:var(--crimson);color:#fff;border:none;font-size:14px;font-family:inherit;font-weight:300;letter-spacing:3px;cursor:pointer;transition:background .2s;margin-top:8px;}
+    .btn-submit:hover{background:var(--crimson-dark);}
+
+    /* CONTACT ALTERNATIVE */
+    .contact-alt{margin-top:50px;padding:32px;background:var(--light);text-align:center;}
+    .contact-alt p{font-size:13px;color:var(--gray);line-height:2.2;margin-bottom:16px;}
+    .contact-alt .tel{font-size:22px;color:var(--dark);letter-spacing:3px;font-family:'Cormorant Garamond',serif;}
+
+    /* FOOTER */
+    footer{background:var(--dark);padding:50px 0 30px;}
+    .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:40px;margin-bottom:30px;border-bottom:1px solid rgba(255,255,255,0.1);gap:40px;}
+    .footer-logo .logo-main{color:#fff;}
+    .footer-logo .logo-en,.footer-logo .logo-ja{color:rgba(255,255,255,0.5);}
+    .footer-info{font-size:12px;color:rgba(255,255,255,0.6);line-height:2;margin-top:12px;}
+    .footer-nav{display:flex;gap:24px;flex-wrap:wrap;}
+    .footer-nav a{text-decoration:none;color:rgba(255,255,255,0.6);font-size:12px;transition:color .2s;}
+    .footer-nav a:hover{color:#fff;}
+    .footer-bottom{text-align:center;font-size:11px;color:rgba(255,255,255,0.4);}
+
+    /* HAMBURGER */
+    .menu-btn{display:none;flex-direction:column;justify-content:space-between;width:24px;height:18px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;}
+    .menu-btn span{display:block;width:100%;height:1px;background:var(--dark);transition:all .3s;}
+    .menu-btn.open span:nth-child(1){transform:translateY(8.5px) rotate(45deg);}
+    .menu-btn.open span:nth-child(2){opacity:0;}
+    .menu-btn.open span:nth-child(3){transform:translateY(-8.5px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;top:70px;left:0;right:0;bottom:0;background:rgba(44,36,32,0.97);z-index:99;overflow-y:auto;padding:20px 0;}
+    .mobile-nav.open{display:block;}
+    .mobile-nav nav{display:flex;flex-direction:column;}
+    .mobile-nav nav a{display:block;padding:18px 30px;font-size:15px;letter-spacing:2px;color:rgba(255,255,255,0.85);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.1);}
+    .mobile-nav .m-reserve{display:block;margin:28px 30px 0;text-align:center;padding:16px;background:var(--crimson);color:#fff;text-decoration:none;font-size:14px;letter-spacing:2px;}
+
+    /* ANIMATIONS */
+    .fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+    .fade-up.visible{opacity:1;transform:none;}
+
+    @media(max-width:768px){
+      header{padding:0 20px;}
+      .menu-btn{display:flex;}
+      header nav{display:none;}
+      .container{padding:0 20px;}
+      .page-hero{height:300px;}
+      .page-hero-content{left:5%;right:5%;bottom:40px;}
+      .page-hero-content h1{letter-spacing:3px;}
+      .positions-grid{grid-template-columns:1fr;}
+      .position-card-top{padding:24px 24px 18px;}
+      .position-card-body{padding:20px 24px;}
+      .why-grid{grid-template-columns:1fr;}
+      .why-item{border-right:none;}
+      .why-item:nth-last-child(-n+3){border-bottom:1px solid #e8e0d5;}
+      .why-item:last-child{border-bottom:none;}
+      .gallery-strip{grid-template-columns:repeat(2,1fr);height:200px;}
+      .voice-grid{grid-template-columns:1fr;}
+      .form-row{grid-template-columns:1fr;}
+      .footer-inner{flex-direction:column;gap:24px;}
+      .footer-nav{gap:16px;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <span class="logo-en">Osteria</span>
+    <span class="logo-main">LUCE</span>
+    <span class="logo-ja">オステリア ルーチェ</span>
+  </a>
+  <nav>
+    <a href="concept.html">コンセプト</a>
+    <a href="chef.html">こだわり</a>
+    <a href="menu.html">メニュー</a>
+    <a href="atmosphere.html">店内</a>
+    <a href="course-luce.html">コース</a>
+    <a href="index.html#access">アクセス</a>
+    <a href="index.html#reserve" class="btn-reserve">ご予約はこちら</a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="メニュー"><span></span><span></span><span></span></button>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <nav>
+    <a href="concept.html" onclick="closeMobileNav()">コンセプト</a>
+    <a href="chef.html" onclick="closeMobileNav()">こだわり</a>
+    <a href="menu.html" onclick="closeMobileNav()">メニュー</a>
+    <a href="atmosphere.html" onclick="closeMobileNav()">店内</a>
+    <a href="course-luce.html" onclick="closeMobileNav()">コース</a>
+    <a href="index.html#access" onclick="closeMobileNav()">アクセス</a>
+  </nav>
+  <a href="index.html#reserve" class="m-reserve" onclick="closeMobileNav()">ご予約はこちら</a>
+</div>
+
+<div class="page-hero">
+  <img src="images/interior-modern.jpg" alt="Osteria LUCE 採用情報">
+  <div class="page-hero-content">
+    <span class="page-label">RECRUIT</span>
+    <h1>採用情報</h1>
+    <p>一緒に、最高の食体験を届けましょう。</p>
+  </div>
+</div>
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="index.html">HOME</a>
+    <span>›</span>
+    <span>採用情報</span>
+  </div>
+</div>
+
+<!-- MESSAGE -->
+<section class="message-section">
+  <div class="container">
+    <span class="section-label fade-up">MESSAGE</span>
+    <h2 class="fade-up">食を通じて、人の心を動かす。<br>そんな仕事を、一緒にしませんか。</h2>
+    <p class="fade-up">Osteria LUCEは、「食事の時間を人生の特別な瞬間にする」という想いのもと、甲府の地に根ざした本格イタリアンレストランです。料理の腕前はもちろん、お客様一人ひとりに寄り添うサービスを大切にしています。未経験でも情熱のある方、食やサービスが好きな方、ぜひ一緒に働きましょう。</p>
+  </div>
+</section>
+
+<!-- GALLERY STRIP -->
+<div class="gallery-section fade-up">
+  <div class="gallery-strip">
+    <div class="gallery-strip-item">
+      <img src="images/interior-warm.jpg" alt="店内">
+    </div>
+    <div class="gallery-strip-item">
+      <img src="images/dishes-spread.jpg" alt="料理">
+    </div>
+    <div class="gallery-strip-item">
+      <img src="images/interior-bistro.jpg" alt="ビストロ席">
+    </div>
+    <div class="gallery-strip-item">
+      <img src="images/antipasto-board.jpg" alt="料理">
+    </div>
+  </div>
+</div>
+
+<!-- POSITIONS -->
+<section class="positions-section">
+  <div class="container">
+    <span class="section-label fade-up">OPEN POSITIONS</span>
+    <h2 class="fade-up">募集職種</h2>
+    <div class="positions-grid">
+
+      <div class="position-card fade-up">
+        <div class="position-card-top">
+          <span class="position-type">HALL STAFF</span>
+          <div class="position-title">ホールスタッフ</div>
+          <div class="position-sub">正社員 / アルバイト・パート</div>
+        </div>
+        <div class="position-card-body">
+          <table class="position-table">
+            <tr>
+              <th>仕事内容</th>
+              <td>ご案内・オーダー・料理提供・会計など接客全般。ワインや料理の知識も自然と身につきます。</td>
+            </tr>
+            <tr>
+              <th>雇用形態</th>
+              <td>
+                正社員<span class="badge-full">正社員</span><br>
+                アルバイト・パート<span class="badge-part">アルバイト</span>
+              </td>
+            </tr>
+            <tr>
+              <th>給与</th>
+              <td>正社員：月給22万円〜（経験考慮）<br>アルバイト：時給1,050円〜</td>
+            </tr>
+            <tr>
+              <th>勤務時間</th>
+              <td>ランチ 10:30〜15:30<br>ディナー 16:30〜23:30<br>シフト制・週2日〜OK</td>
+            </tr>
+            <tr>
+              <th>休日</th>
+              <td>月曜定休＋シフトによる（月8〜9日）</td>
+            </tr>
+            <tr>
+              <th>待遇</th>
+              <td>交通費支給・まかない付き・社会保険完備（正社員）</td>
+            </tr>
+            <tr>
+              <th>応募資格</th>
+              <td>未経験歓迎・接客好きな方・食やワインに興味のある方</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="position-card fade-up">
+        <div class="position-card-top">
+          <span class="position-type">KITCHEN STAFF</span>
+          <div class="position-title">キッチンスタッフ</div>
+          <div class="position-sub">正社員 / アルバイト・パート</div>
+        </div>
+        <div class="position-card-body">
+          <table class="position-table">
+            <tr>
+              <th>仕事内容</th>
+              <td>食材の仕込み・調理補助・盛り付け・洗い場など。シェフの指導のもとイタリア料理の技術が学べます。</td>
+            </tr>
+            <tr>
+              <th>雇用形態</th>
+              <td>
+                正社員<span class="badge-full">正社員</span><br>
+                アルバイト・パート<span class="badge-part">アルバイト</span>
+              </td>
+            </tr>
+            <tr>
+              <th>給与</th>
+              <td>正社員：月給22万円〜（経験考慮）<br>アルバイト：時給1,050円〜</td>
+            </tr>
+            <tr>
+              <th>勤務時間</th>
+              <td>ランチ 10:00〜15:30<br>ディナー 16:00〜23:30<br>シフト制・週2日〜OK</td>
+            </tr>
+            <tr>
+              <th>休日</th>
+              <td>月曜定休＋シフトによる（月8〜9日）</td>
+            </tr>
+            <tr>
+              <th>待遇</th>
+              <td>交通費支給・まかない付き・社会保険完備（正社員）</td>
+            </tr>
+            <tr>
+              <th>応募資格</th>
+              <td>未経験歓迎・調理に興味のある方・イタリア料理を学びたい方</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY LUCE -->
+<section class="why-section">
+  <div class="container">
+    <span class="section-label fade-up">WHY LUCE</span>
+    <h2 class="fade-up">Osteria LUCEで働く理由</h2>
+    <div class="why-grid">
+      <div class="why-item fade-up">
+        <div class="why-num">01</div>
+        <h3>未経験から育てます</h3>
+        <p>飲食未経験でも大丈夫。先輩スタッフが丁寧に指導します。接客マナーからワインの知識まで、働きながら自然に身につく環境です。</p>
+      </div>
+      <div class="why-item fade-up">
+        <div class="why-num">02</div>
+        <h3>本物のイタリアンが学べる</h3>
+        <p>トスカーナ修行経験を持つシェフのもとで、本格的なイタリア料理の技術を習得できます。将来独立を目指す方も歓迎。</p>
+      </div>
+      <div class="why-item fade-up">
+        <div class="why-num">03</div>
+        <h3>まかない・福利厚生充実</h3>
+        <p>毎日シェフが作るまかない付き。社会保険完備（正社員）・交通費全額支給・制服貸与など、安心して長く働ける環境を整えています。</p>
+      </div>
+      <div class="why-item fade-up">
+        <div class="why-num">04</div>
+        <h3>シフト自由・週2日〜OK</h3>
+        <p>学業・育児・副業との両立も歓迎。週2日・1日4時間からの短時間勤務もOK。ライフスタイルに合わせてシフトを組めます。</p>
+      </div>
+      <div class="why-item fade-up">
+        <div class="why-num">05</div>
+        <h3>チームの雰囲気が自慢</h3>
+        <p>スタッフ同士の仲がよく、風通しのよい職場です。定期的なスタッフ食事会や勉強会も開催。一緒に成長できる仲間がいます。</p>
+      </div>
+      <div class="why-item fade-up">
+        <div class="why-num">06</div>
+        <h3>甲府駅から徒歩3分</h3>
+        <p>通勤便利な好立地。車・自転車通勤も歓迎。甲府市内はもちろん、近隣市町村からも通いやすい環境です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAFF VOICE -->
+<section class="voice-section">
+  <div class="container">
+    <span class="section-label fade-up">STAFF VOICE</span>
+    <h2 class="fade-up">スタッフの声</h2>
+    <div class="voice-grid">
+      <div class="voice-card fade-up">
+        <span class="voice-role">HALL STAFF</span>
+        <div class="voice-name">田中 さくら（入社2年目）</div>
+        <p class="voice-text">全くの未経験で入りましたが、先輩が丁寧に教えてくれて半年でひとり立ちできました。お客様の「美味しかった」「また来るね」の言葉が何よりの励みです。</p>
+      </div>
+      <div class="voice-card fade-up">
+        <span class="voice-role">KITCHEN STAFF</span>
+        <div class="voice-name">鈴木 拓海（入社3年目）</div>
+        <p class="voice-text">調理師学校を出てここに就職しました。シェフから直接イタリア料理を教われる環境は本当に贅沢だと思います。毎日新しい発見があって楽しいです。</p>
+      </div>
+      <div class="voice-card fade-up">
+        <span class="voice-role">PART TIME</span>
+        <div class="voice-name">佐藤 美咲（大学生・週3勤務）</div>
+        <p class="voice-text">学業との両立が心配でしたが、シフトを柔軟に組んでもらえて助かっています。まかないが美味しくて、毎回出勤が楽しみです（笑）。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION -->
+<section class="apply-section" id="apply">
+  <div class="container">
+    <div class="apply-inner">
+      <span class="section-label fade-up">APPLICATION</span>
+      <h2 class="fade-up">応募フォーム</h2>
+      <p class="lead fade-up">以下のフォームに必要事項をご記入の上、送信してください。3営業日以内にご連絡いたします。お電話でのご応募も歓迎します。</p>
+
+      <form class="apply-form fade-up" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label>お名前<span class="form-required">*</span></label>
+            <input type="text" name="name" placeholder="山田 太郎" required>
+          </div>
+          <div class="form-group">
+            <label>フリガナ<span class="form-required">*</span></label>
+            <input type="text" name="name_kana" placeholder="ヤマダ タロウ" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>メールアドレス<span class="form-required">*</span></label>
+            <input type="email" name="email" placeholder="example@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>電話番号<span class="form-required">*</span></label>
+            <input type="tel" name="tel" placeholder="090-0000-0000" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>希望職種<span class="form-required">*</span></label>
+            <select name="position" required>
+              <option value="">選択してください</option>
+              <option value="hall_full">ホールスタッフ（正社員）</option>
+              <option value="hall_part">ホールスタッフ（アルバイト）</option>
+              <option value="kitchen_full">キッチンスタッフ（正社員）</option>
+              <option value="kitchen_part">キッチンスタッフ（アルバイト）</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>希望勤務開始時期</label>
+            <select name="start_date">
+              <option value="">選択してください</option>
+              <option value="immediately">すぐにでも</option>
+              <option value="1month">1ヶ月以内</option>
+              <option value="3month">3ヶ月以内</option>
+              <option value="undecided">未定</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>経験・資格</label>
+          <input type="text" name="experience" placeholder="例：飲食店アルバイト2年、調理師免許取得済み、未経験 など">
+        </div>
+        <div class="form-group">
+          <label>志望動機・自己PR</label>
+          <textarea name="message" placeholder="志望動機や自己PRをご自由にお書きください。"></textarea>
+        </div>
+        <p class="form-note">※ご応募いただいた個人情報は採用選考のみに使用し、第三者への提供は行いません。</p>
+        <button type="submit" class="btn-submit">応募する</button>
+      </form>
+
+      <div class="contact-alt fade-up">
+        <p>お電話でのご応募・お問い合わせも承っております<br>（受付時間：火〜日 11:00〜22:00）</p>
+        <div class="tel">055-123-4567</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <a href="index.html" class="logo footer-logo">
+          <span class="logo-en">Osteria</span>
+          <span class="logo-main">LUCE</span>
+          <span class="logo-ja">オステリア ルーチェ</span>
+        </a>
+        <p class="footer-info">〒400-0031 山梨県甲府市丸の内1-1-1<br>営業時間：11:30〜14:30 / 17:30〜23:00<br>定休日：月曜日　TEL：055-123-4567</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="concept.html">コンセプト</a>
+        <a href="chef.html">こだわり</a>
+        <a href="menu.html">メニュー</a>
+        <a href="atmosphere.html">店内</a>
+        <a href="course-luce.html">コース</a>
+        <a href="news.html">お知らせ</a>
+        <a href="recruit.html">採用情報</a>
+        <a href="index.html#access">アクセス</a>
+      </nav>
+    </div>
+    <p class="footer-bottom">© 2024 Osteria LUCE. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  },{threshold:0.08});
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+  });
+  function closeMobileNav() {
+    menuBtn.classList.remove('open');
+    mobileNav.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+</script>
+</body>
+</html>
